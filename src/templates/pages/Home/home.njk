@@ -1,0 +1,26 @@
+{% extends "includes/layout/layout.njk" %}
+
+{# You can also use set for handling data #}
+{% set colors = [
+{
+text: 'I love green color too much.',
+class: 'green'
+}
+] %}
+
+{% block content %}
+    <h1>Hello World! Miyawww!</h1>
+
+    {% for item in colors %}
+        <p class="{{ item.class }}">{{ item.text }}</p>
+    {% endfor %}
+
+    {% for item in pets %}
+        <p class="{{ item.class }}">{{ item.text }}</p>
+    {% endfor %}
+
+    {% for item in fruits %}
+        <button class="{{ item.class }}">{{ item.text }}</button>
+    {% endfor %}
+
+{% endblock %}

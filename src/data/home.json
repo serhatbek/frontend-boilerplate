@@ -1,0 +1,26 @@
+{
+  "pets": [
+    {
+      "text": "You love my cat, don't you?",
+      "class": "cat"
+    },
+    {
+      "text": "You love my dog, don't you?",
+      "class": "dog"
+    }
+  ],
+  "fruits": [
+    {
+      "text": "love apple",
+      "class": "apple"
+    },
+    {
+      "text": "love orange",
+      "class": "orange"
+    },
+    {
+      "text": "love lemon",
+      "class": "banana"
+    }
+  ]
+}

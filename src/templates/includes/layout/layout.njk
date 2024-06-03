@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% if title %}
+                {{ title }}
+            {% endif %}
+        </title>
+        <!-- Placeholder for CSS script -->
+        <link rel="stylesheet" href="../assets/css/gulp-nunjucks-starter.min.css">
+
+    </head>
+    <body>
+        <header>
+            {% include "includes/components/Header/header.njk" %}
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            {% include "includes/components/Footer/footer.njk" %}
+        </footer>
+        <!-- Placeholder for JS script -->
+        <script src="../assets/js/gulp-nunjucks-starter.min.js"></script>
+
+    </body>
+</html>
