@@ -2,12 +2,13 @@ import gulp from 'gulp';
 const { src, dest, watch, parallel, series } = gulp;
 import config from './config.js';
 const { paths } = config;
-// const pkg = require("./package.json")
-import pkg from './package.json';
+import fs from 'fs';
+const pkg = JSON.parse(fs.readFileSync('./package.json'));
 
-import dartSass from 'sass';
+import minSCSS from 'gulp-clean-css';
+import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
-const sass = gulpSass(dartSass);
+const scss = gulpSass(dartSass);
 
 import gulpWrite from 'gulp-sourcemaps';
 const { write, init } = gulpWrite;
@@ -21,12 +22,12 @@ import imagemin from 'gulp-imagemin';
 import rename from 'gulp-rename';
 import minJS from 'gulp-uglify';
 import autoprefixer from 'gulp-autoprefixer';
+import clean from 'gulp-clean';
 
 import nunjucksRender from 'gulp-nunjucks-render';
 import gulpData from 'gulp-data';
 const data = gulpData;
 import { basename, extname, join } from 'path';
-import fs from 'fs';
 
 const imagesTask = () => {
   return src(paths.src.images + '**/*.{gif,svg,webp,jpg,jpeg,png}')
@@ -105,7 +106,6 @@ function nunjucksTask() {
         }
       })
     )
-    .pipe(plumber({ errorHandler: onError('Error: <%= error.message %>') }))
     .pipe(nunjucksRender({ path: ['src/templates'], watch: true }))
     .pipe(notify({ message: 'Nunjucks files rendered', onLast: true }))
     .pipe(dest(paths.dist.njk));
@@ -134,17 +134,11 @@ const cleanDistTask = () => {
 const watchTask = () => {
   watch(
     [paths.watch.njk + '**/*.+(html|njk)', paths.watch.data + '**/*.json'],
-    parallel(njkRender, browserSyncReload)
+    parallel(nunjucksTask, browserSyncReload)
   );
   watch(
     [paths.watch.scss, paths.watch.js, paths.watch.images, paths.watch.fonts],
-    parallel(
-      copyImages,
-      transferFonts,
-      compileScss,
-      compileJs,
-      browserSyncReload
-    )
+    parallel(imagesTask, fontsTask, scssTask, jsTask, browserSyncReload)
   );
 };
 
