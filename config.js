@@ -8,6 +8,7 @@ config.paths = {
     images: 'src/images/',
     fonts: 'src/fonts/',
     data: 'src/data/',
+    svg: 'src/svg/',
   },
   dist: {
     njk: 'dist',
@@ -15,6 +16,7 @@ config.paths = {
     js: 'dist/assets/js/',
     images: 'dist/assets/images/',
     fonts: 'dist/assets/fonts/',
+    svg: 'dist/assets/fonts/',
   },
   watch: {
     njk: 'src/templates/',
@@ -23,6 +25,7 @@ config.paths = {
     images: 'src/images/**/*.{webp,jpeg,jpg,png,svg,gif}',
     fonts: 'src/fonts/*.{woff,woff2,eot,ttf}',
     data: 'src/data/',
+    svg: 'src/svg/',
   },
   inject: {
     css: '../assets/css/',

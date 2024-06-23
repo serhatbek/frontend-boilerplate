@@ -1,0 +1,16 @@
+i {
+  font-style: normal;
+  line-height: 1;
+  display: inline-block;
+}
+
+// Change font-family name 'frontend-boilerplate' with your package name!
+[class^='icon-'],
+[class*=' icon-'] {
+  font-family: 'frontend-boilerplate' !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-size: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

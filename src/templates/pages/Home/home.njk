@@ -9,9 +9,14 @@ class: 'green'
 ] %}
 
 {% block content %}
-    <h1>Hello World! Miyawww!</h1>
+    <h1>Hello World! Miyawww!
+    </h1>
 
     {% for item in colors %}
+        <i class="icon-hamburger"></i>
+        <i class="icon-balloon"></i>
+        <i class="icon-leaf"></i>
+        <i class="icon-home"></i>
         <p class="{{ item.class }}">{{ item.text }}</p>
     {% endfor %}
 

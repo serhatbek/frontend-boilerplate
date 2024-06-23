@@ -1,0 +1,17 @@
+$uniqueid: unique_id();
+$icon-font-family-name: 'frontend-boilerplate'; // Change icon-font-family name with your package name!
+$icon-font-name: 'frontend-boilerplate'; // Change icon-font-name with generated icon font name from 'dist/assets/fonts/' path!
+
+@font-face {
+  font-family: #{$icon-font-family-name};
+  src: url('../fonts/#{$icon-font-name}.eot?v=#{$uniqueid}');
+  src: url('../fonts/#{$icon-font-name}.eot?#iefix?v=#{$uniqueid}')
+      format('embedded-opentype'),
+    url('../fonts/#{$icon-font-name}.woff2?v=#{$uniqueid}') format('woff2'),
+    url('../fonts/#{$icon-font-name}.woff?v=#{$uniqueid}') format('woff'),
+    url('../fonts/#{$icon-font-name}.ttf?v=#{$uniqueid}') format('truetype'),
+    url('../fonts/#{$icon-font-name}.svg?v=#{$uniqueid}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

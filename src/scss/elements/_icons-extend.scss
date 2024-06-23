@@ -1,0 +1,54 @@
+
+  %icon-hamburger {
+    content: "\EA01";
+  }
+  
+  .icon-hamburger { &::before {
+  @extend %icon-hamburger;
+    }
+  }
+
+  %icon-close {
+    content: "\EA02";
+  }
+  
+  .icon-close { &::before {
+  @extend %icon-close;
+    }
+  }
+
+  %icon-balloon {
+    content: "\EA03";
+  }
+  
+  .icon-balloon { &::before {
+  @extend %icon-balloon;
+    }
+  }
+
+  %icon-leaf {
+    content: "\EA04";
+  }
+  
+  .icon-leaf { &::before {
+  @extend %icon-leaf;
+    }
+  }
+
+  %icon-home {
+    content: "\EA05";
+  }
+  
+  .icon-home { &::before {
+  @extend %icon-home;
+    }
+  }
+
+  %icon-shower {
+    content: "\EA06";
+  }
+  
+  .icon-shower { &::before {
+  @extend %icon-shower;
+    }
+  }

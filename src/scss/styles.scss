@@ -1,2 +1,15 @@
 @forward './base/base';
 @forward './components/components';
+@forward './elements/elements';
+
+// Remove the dummy styles below
+
+.orange {
+  background-color: rgb(126, 136, 208);
+  font-size: 24px;
+}
+
+.banana {
+  background-color: rgb(188, 239, 111);
+  font-size: 34px;
+}

@@ -1,0 +1,10 @@
+<% _.each(glyphs, function(glyph) { %>
+  %<%= prefix %><%= glyph.name %> {
+    content: "\<%= glyph.codepoint %>";
+  }
+  
+  .<%= prefix %><%= glyph.name %> { &::before {
+  @extend %<%= prefix %><%= glyph.name %>;
+    }
+  }
+<% }); %>
